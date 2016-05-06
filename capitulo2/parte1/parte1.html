@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Succinctly</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body ng-app>
+    <h1>Atribuindo um valor padrão para o model</h1>
+    <br>
+        <div ng-controller="MyCtrl">
+            <p>{{value}}</p>
+        </div>
+        <!--
+            Se estiver fora do ng-controller o {{ }} não irá funcionar
+
+            <p>{{value}}</p>
+            <div ng-controller="MyCtrl"></div>
+        -->
+    </body>
+</html>

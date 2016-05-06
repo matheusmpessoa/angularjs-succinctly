@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Succinctly</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body ng-app>
+    <h1>Mudando o valor de um model com uma função do controller</h1>
+    <br>
+        <div ng-controller="MyCtrl">
+            <p ng-init="incrementValue(5)">{{value}}</p>
+            <!-- O valor passado por parâmetro será incrementado com o valor inicial -->
+        </div>
+    </body>
+</html>
