@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Succinctly</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body ng-app="MyApp">
+    <h1>Compartilhando código entre Controllers usando services</h1>
+    <br>
+        <!-- Template que exibe acesso a uma lista de usuários vindo de DOIS controllers -->
+        <div ng-controller="MyCtrl">
+            <h2>Lista de todos os usuários</h2>
+            <ul ng-repeat="user in users">
+                <li>{{user}}</li>
+            </ul>
+            <h2>Primeiro usuário da lista</h2>
+            <div class="nested" ng-controller="AnotherCtrl">
+                First user: {{firstUser}}
+            </div>
+        </div>
+    </body>
+</html>
