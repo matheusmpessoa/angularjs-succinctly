@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Succinctly</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+    </head>
+
+    <body ng-app>
+    <h1>Desabilitando e Habilitando elementos DOM condicionalmente</h1>
+    <br>
+        <!-- O botão ficará habilitado apenas se o 'checked' não for marcado -->
+        <!-- É possível inverter a lógica do botão utilizando '!checked' -->
+        <label>
+            <input type="checkbox" ng-model="checked" />Toggle Button
+        </label>
+        <!-- ng-disabled é uma diretiva para desabilitar um atributo -->
+        <button ng-disabled="checked">Press me</button>
+    </body>
+</html>
