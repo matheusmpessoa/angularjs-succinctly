@@ -11,8 +11,10 @@
         <h1>Passando uma configuração via parametro para os filtros</h1>
         <br>
 
-        <input type="text" ng-model="text" placeholder="Enter text" />
-        <p>Input: {{ text }}</p>
-        <p>Filtered input: {{ text | reverse: { suffix: "!"} }}</p>
+        <ul ng-init="names = ['Peter', 'Anton', 'John', 'Joe', 'Zach']">
+            <li ng-repeat="name in names | exclude:'Peter'">
+                <span>{{name}}</span>
+            </li>
+        </ul>
     </body>
 </html>
