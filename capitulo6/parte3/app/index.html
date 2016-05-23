@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Succinctly</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+        <link rel="stylesheet" href="css/app.css" />
+    </head>
+
+    <body ng-controller="MainCtrl">
+        <h1>Utilizando URLs regulares com HTML5 History API</h1>
+
+        <ul class="menu">
+            <li ng-class="menuClass('persons')"><a href="#!persons">Home</a></li>
+            <li ng-class="menuClass('help')"><a href="#!help">Help</a></li>
+        </ul>
+        <h1>Routing Example</h1>
+        <ng-view></ng-view>
+        <script src="lib/angular/angular.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
