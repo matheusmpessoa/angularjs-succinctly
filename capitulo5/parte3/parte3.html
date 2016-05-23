@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Succinctly</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+        <script src="app.js"></script>
+        <script src="angular-resource.js"></script>
+        <script src="angular.js"></script>
+    </head>
+    <!-- Essa aplicação não funciona por causa da versão do search Twitter -->
+    <body ng-app="MyApp">
+        <h1>Consumindo JSONP APIs</h1>
+        <div ng-controller="MyCtrl">
+            <input type="text" ng-model="searchTerm" placeholder="Search term">
+            <button ng-click="search()">Search</button>
+            <ul ng-repeat="tweet in searchResult.results">
+                <li>{{tweet.text}}</li>
+            </ul>
+        </div>
+    </body>
+</html>
