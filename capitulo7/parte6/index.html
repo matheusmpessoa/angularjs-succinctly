@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Succinctly</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+        <script src="app.js"></script>
+
+        <!-- Angular-ui é utilizado em diretivas de validação -->
+        <script src="angular-ui.js"></script>
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+        <style type="text/css">
+            input.ng-invalid.ng-dirty {
+                background-color: red;
+            }
+
+            input.ng-valid.ng-dirty {
+                background-color: green;
+            }
+        </style>
+    </head>
+
+    <body ng-app="MyApp">
+        <h1>Implementando validações customizadas</h1>
+
+        <div ng-controller="User">
+            <form name="form" ng-submit="submit()" class="form-horizontal" novalidate>
+                <label>Firstname</label>
+                <input name="firstname" type="text" ng-model="user.firstname" required ui-validate=" { blacklisted: 'notBlackListed($value)' } " />
+                <p ng-show="form.firstname.$invalid && form.firstname.$dirty">Firstname is required</p>
+                <p ng-show='form.firstname.$error.blacklisted'>This firstname is blacklisted.</p>
+                <br>
+                <button ng-disabled="form.$invalid" class="btn">Submit</button>
+            </form>
+
+            User Model: {{user}}
+            <br> Form was submitted: {{wasSubmitted}}
+            <br> Firstname input valid: {{form.firstname.$valid}}
+            <br> Firstname validation error: {{form.firstname.$error}}
+            <br> Form valid: {{form.$valid}}
+            <br> Form validation error: {{form.$error}}
+        </div>
+    </body>
+</html>

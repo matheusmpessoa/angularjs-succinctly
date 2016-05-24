@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Succinctly</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body ng-app="MyApp">
+        <h1>Displaying Validação erros de Form com o Framework Twitter Bootstrap</h1>
+
+        <div ng-controller="User" class="container">
+            <form name="form" ng-submit="submit()" novalidate>
+                <div class="control-group" ng-class="error('firstname')">
+                    <label class="control-label" for="firstname">Firstname</label>
+                    <div class="controls">
+                        <input id="firstname" name="firstname" type="text" ng-model="user.firstname" placeholder="Firstname" required/>
+                        <span class="help-block" ng-show="form.firstname.$invalid && form.firstname.$dirty">Firstname is required</span>
+                    </div>
+                </div>
+
+                <div class="control-group" ng-class="error('lastname')">
+                    <label class="control-label" for="lastname">Lastname</label>
+                    <div class="controls">
+                        <input id="lastname" name="lastname" type="text" ng-model="user.lastname" placeholder="Lastname" required/>
+                        <span class="help-block" ng-show="form.lastname.$invalid && form.lastname.$dirty">Lastname is required</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <button ng-disabled="form.$invalid" class="btn">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+            User Model: {{user}}
+            <br> Form was submitted: {{wasSubmitted}}
+            <br> Firstname input valid: {{form.firstname.$valid}}
+            <br> Firstname validation error: {{form.firstname.$error}}
+            <br> Form valid: {{form.$valid}}
+            <br> Form validation error: {{form.$error}}
+        </div>
+    </body>
+</html>
