@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AngularJS Succinctly</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+        <script src="app.js"></script>
+
+        <style type="text/css">
+            input.ng-invalid.ng-dirty {
+                background-color: red;
+            }
+
+            input.ng-valid.ng-dirty {
+                background-color: green;
+            }
+        </style>
+    </head>
+
+    <body ng-app="MyApp">
+        <h1>Filtrando e ordenando uma lista</h1>
+
+        <div ng-controller="MyCtrl">
+
+            <h3>Filter by String</h3>
+            <form class="form-inline">
+                <input ng-model="query" type="text" placeholder="Filter by name" autofocus>
+            </form>
+            <ul ng-repeat="friend in friends | filter: query | orderBy: 'name' ">
+                <li>{{friend.name}} ({{friend.age}})</li>
+            </ul>
+        </div>
+
+        <div ng-controller="MyCtrl">
+            <h3>Filter by Object</h3>
+            <form class="form-inline">
+                <input ng-model="query" type="text" placeholder="Filter by name and age=20">
+            </form>
+            <ul ng-repeat="friend in friends | filter: { name: query, age: '20' } | orderBy: 'name' ">
+                <li>{{friend.name}} ({{friend.age}})</li>
+            </ul>
+        </div>
+
+        <div ng-controller="MyCtrl">
+            <h3>Filter by Predicate Function</h3>
+            <ul ng-repeat="friend in friends | filter: filterFunction | orderBy: 'name' ">
+                <li>{{friend.name}} ({{friend.age}})</li>
+            </ul>
+        </div>
+    </body>
+</html>
