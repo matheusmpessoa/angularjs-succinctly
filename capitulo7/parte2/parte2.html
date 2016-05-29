@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <title>AngularJS Succinctly</title>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
-        <link rel="stylesheet" href="css/app.css" />
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="app.js"></script>
     </head>
-
     <body ng-app="MyApp">
-        <h1>Validando um formulário no lado cliente</h1>
-
         <div ng-controller="User">
-            <form name="form" ng-submit="submit()">
+            <form name="form" ng-submit="submit()" novalidate>
                 <label>Firstname</label>
                 <input name="firstname" type="text" ng-model="user.firstname" required/>
                 <label>Lastname</label>
@@ -21,6 +21,14 @@
                 <br>
                 <button class="btn">Submit</button>
             </form>
+
+            User Model: {{user}}
+            <br> Form was submitted: {{wasSubmitted}}
+            <br> Firstname input valid: {{form.firstname.$valid}}
+            <br> Firstname input invalid: {{form.firstname.$invalid}}
+            <br> Firstname validation error: {{form.firstname.$error}}
+            <br> Form valid: {{form.$valid}}
+            <br> Form validation error: {{form.$error}}
         </div>
     </body>
 </html>

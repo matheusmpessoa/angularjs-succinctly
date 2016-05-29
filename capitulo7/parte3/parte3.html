@@ -4,8 +4,11 @@
         <meta charset="utf-8">
         <title>AngularJS Succinctly</title>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
-
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="app.js"></script>
+
         <style type="text/css">
             input.ng-invalid.ng-dirty {
                 background-color: red;
@@ -16,10 +19,7 @@
             }
         </style>
     </head>
-
     <body ng-app="MyApp">
-        <h1>Displayin erros de validação de formulário</h1>
-
         <div ng-controller="User">
             <form name="form" ng-submit="submit()" class="form-horizontal" novalidate>
                 <label>Firstname</label>
@@ -41,5 +41,4 @@
             <br> Form validation error: {{form.$error}}
         </div>
     </body>
-
 </html>
