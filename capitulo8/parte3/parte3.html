@@ -10,11 +10,10 @@
 
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
         <script src="app.js"></script>
-        <link rel="stylesheet" href="css/bootstrap.css">
     </head>
 
     <body ng-app="MyApp">
-        <h1>Paginação através da informação do lado cliente</h1>
+        <h1>Passando informação através do lado servidor</h1>
 
         <div ng-controller="PaginationCtrl">
             <table class="table table-striped">
@@ -26,7 +25,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in items | offset: currentPage*itemsPerPage | limitTo: itemsPerPage">
+                    <tr ng-repeat="item in pagedItems">
                         <td>{{item.id}}</td>
                         <td>{{item.name}}</td>
                         <td>{{item.description}}</td>
