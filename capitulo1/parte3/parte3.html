@@ -3,11 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>AngularJS Succinctly</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
         <script src="app.js"></script>
     </head>
 
     <body ng-app>
+        <h1>Respondendo a eventos de clique utilizando controllers</h1>
+
         <div ng-controller="MyCtrl">
             <button ng-click="toggle()">Toggle</button>
             <p ng-show="visible">Hello World!</p>

@@ -3,22 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title>AngularJS Succinctly</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
         <script src="app.js"></script>
     </head>
 
     <body ng-app="myApp">
     <h1>Alterando o DOM em resposta a Ações do usuário</h1>
-    <br>
+
         <!-- Criando directive my-widget que contem um paragrafo que terá o estilo alterado -->
         <my-widget>
             <p>Hello World</p>
         </my-widget>
 
-    <!-- Versão JQuery
-        element.on("click", function() {
-            $(this).css({ "background-color": "red" });
-        });
-    -->
+        <!-- Versão JQuery
+            element.on("click", function() {
+                $(this).css({ "background-color": "red" });
+            });
+        -->
     </body>
 </html>
